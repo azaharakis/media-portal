@@ -7,10 +7,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      src: ':8080'
+      src: ':8081'
     };
 
     this.updateIframe = this.updateIframe.bind(this);
+  }
+
+  componentDidUpdate() {
+    this.app.style.display = 'none';
+    this.app.style.display = 'block';
   }
 
   updateIframe(e){
@@ -21,8 +26,8 @@ class App extends Component {
 
   render() {
     return (
-        <div id="app">
-          <iframe width="100%" height="100%" src={`http://192.168.1.249${this.state.src}`}></iframe>
+        <div id="app" ref={(ref) => this.app = ref}>
+          <iframe scrolling="auto" width="100%" height="100%" src={`http://192.168.1.249${this.state.src}`}></iframe>
           <div className="menu">
             <a onClick={ () => this.updateIframe(':8082')}  className="menu__item ">
               <i className="fa fa-film" aria-hidden="true"></i>
