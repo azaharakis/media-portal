@@ -25,16 +25,19 @@ iframe {
 .menu{
   position:fixed;
   bottom:40px;
-  right:20px;
   opacity: .8;
   background:#fff;
-  border-radius: 10px;
   border-bottom: solid 4px #ccc;
   text-align: center;
 }
 .menu--left{
-  left: 20px;
+  left: 0px;
   right:auto;
+  border-radius: 0 10px 10px 0;
+}
+.menu--right {
+  right:0;
+  border-radius: 10px 0 0 10px;
 }
 
 .menu__item {
